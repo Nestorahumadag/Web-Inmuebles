@@ -1,0 +1,4 @@
+[
+    {"model": "web.inmueble", "pk": 1, "fields": {"nombre": "casa de prueba", "descripcion": "una descripcion", "m2_construidos": "120.50", "m2_totales": 200.00, "cantidad_estacionamientos": 2, "cantidad_habitaciones": 3, "cantidad_banos": 2, "direccion": "calle falsa 123", "comuna": 1, "tipo_inmueble": 1, "precio_mensual_arriendo": 500000, "arrendador": 1}},
+    {"model": "web.inmueble", "pk": 2, "fields": {"nombre": "departamento de prueba", "descripcion": "otra descripción", "m2_construidos": 80.00, "m2_totales": 80.00, "cantidad_estacionamientos": 1, "cantidad_habitaciones": 2, "cantidad_banos": 1, "direccion": "calle falsa 456", "comuna": 2, "tipo_inmueble": 2, "precio_mensual_arriendo": 300000, "arrendador": 1}}
+]

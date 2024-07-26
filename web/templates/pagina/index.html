@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Página Principal{% endblock %}
+{% block content %}
+<h1>Bienvenido a la Página de Inicio</h1>
+{% if user.is_authenticated %}
+    <p>Bienvenido, {{ user.username }}.</p>
+{% else %}
+    <p>Por favor, <a href="{% url 'login' %}">inicie sesión</a> o <a href="{% url 'register' %}">regístrese</a>.</p>
+{% endif %}
+{% endblock %}

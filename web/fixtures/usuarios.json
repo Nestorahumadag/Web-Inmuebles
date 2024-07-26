@@ -1,0 +1,4 @@
+[
+    {"model": "web.user", "pk": 1, "fields": {"nombres": "juan", "apellidos": "perez", "rut": "12345678-9", "direccion": "calle falsa 123", "telefono_personal": "987654321", "correo_electronico": "juan.perez@example.com", "tipo_usuario": "arrendador"}},
+    {"model": "web.user", "pk": 2, "fields": {"nombres": "ana", "apellidos": "gomez", "rut": "98765432-1", "direccion": "calle verdadera 456", "telefono_personal": "123456789", "correo_electronico": "ana.gomez@example.com", "tipo_usuario": "arrendatario"}}
+]

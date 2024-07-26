@@ -1,0 +1,5 @@
+[
+    {"model": "web.tipoinmueble", "pk": 1, "fields": {"nombre": "Casa"}},
+    {"model": "web.tipoinmueble", "pk": 2, "fields": {"nombre": "Departamento"}},
+    {"model": "web.tipoinmueble", "pk": 3, "fields": {"nombre": "Parcela"}}
+]

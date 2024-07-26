@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Arriendo de Inmuebles</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Perfil</a></li>
+                    <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li><a href="{% url 'register' %}">Registrarse</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <h1{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Sitio web creado por Nestor Ahumada ©2024</p>
+    </footer>
+</body>
+</html>

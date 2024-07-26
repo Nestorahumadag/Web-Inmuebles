@@ -1,0 +1,22 @@
+Comuna: Arica
+  - Nombre: casa de prueba
+    Descripción: una descripcion
+    M2 Construidos: 120.50
+    M2 Totales: 200.00
+    Estacionamientos: 2
+    Habitaciones: 3
+    Baños: 2
+    Dirección: calle falsa 123
+    Precio Mensual de Arriendo: 500000.00
+
+Comuna: Camarones
+  - Nombre: departamento de prueba
+    Descripción: otra descripción
+    M2 Construidos: 80.00
+    M2 Totales: 80.00
+    Estacionamientos: 1
+    Habitaciones: 2
+    Baños: 1
+    Dirección: calle falsa 456
+    Precio Mensual de Arriendo: 300000.00
+
