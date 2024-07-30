@@ -1,0 +1,123 @@
+body {
+    background-color: #e7e7e7;
+}
+
+h2, h3 {
+    color: #343a40;
+}
+
+/*==========================Configuracion Navbar===========================*/
+
+.navbar {
+    margin-bottom: 20px;
+    background-color: #095480; /* Cambia esto al color que prefieras */
+}
+
+.navbar .nav-link {
+    color: white; /* Cambia el color del texto del enlace */
+}
+
+.navbar .navbar-brand {
+    color: white; /* Cambia el color del texto de la marca */
+    font-family: "Lobster", sans-serif;
+    font-size: 30px;
+}
+
+/* Cambia el color de los enlaces al pasar el ratón */
+.navbar .nav-link:hover {
+    color: #d4d4d4;
+}
+
+/* Si quieres cambiar el color del botón de hamburguesa */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/*==========================Fin Configuracion Navbar===========================*/
+
+
+/*=========================Configuracion form-control region y comuna============================*/
+
+.form-control-sm {
+    width: auto; /* Ajustar el ancho automáticamente */
+    max-width: 150px; /* Establecer un ancho máximo */
+}
+
+.form-inline .form-group {
+    margin-bottom: 0.5rem; /* Reducir el margen inferior */
+}
+
+/*=========================Fin Configuracion form-control region y comuna============================*/
+
+
+
+/*======================Configurar Footer =========================================*/
+
+footer {
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+    background-color: #095480; /* Color de fondo opcional */
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+footer .icon {
+    display: inline-flex;
+    align-items: center;
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    font-family: "Lobster", sans-serif;
+
+}
+
+footer .icon img {
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    
+}
+
+footer .text-center {
+    color: #d1d1d1; /* Color del texto opcional */
+}
+
+footer .text-center p {
+    margin: 0; /* Eliminar márgenes opcionales */
+}
+
+/*======================Fin Configurar Footer =========================================*/
+
+
+
+
+
+/*====================Configurar tamaños responisvos=================================*/
+
+/* Media queries para dispositivos pequeños */
+@media (max-width: 767px) {
+    .navbar {
+        background-color: #095480; /* Cambia esto al color que prefieras */
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Media queries para dispositivos medianos */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar {
+        background-color: #095480; /* Cambia esto al color que prefieras */
+    }
+}
+
+/* Media queries para dispositivos grandes */
+@media (min-width: 992px) {
+    .navbar {
+        background-color: #095480; /* Cambia esto al color que prefieras */
+    }
+}
+
+/*====================Fin Configurar tamaños responisvos=================================*/

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">{{ inmueble.nombre }}</h2>
+    <div class="row">
+        <div class="col-md-8">
+            {% if inmueble.imagen %}
+                <img src="{{ inmueble.imagen.url }}" class="img-fluid" alt="{{ inmueble.nombre }}">
+            {% endif %}
+            <p>{{ inmueble.descripcion }}</p>
+            <ul>
+                <li>Metros construidos: {{ inmueble.m2_construidos }} m²</li>
+                <li>Metros totales: {{ inmueble.m2_totales }} m²</li>
+                <li>Habitaciones: {{ inmueble.cantidad_habitaciones }}</li>
+                <li>Baños: {{ inmueble.cantidad_banos }}</li>
+                <li>Estacionamientos: {{ inmueble.cantidad_estacionamientos }}</li>
+                <li>Dirección: {{ inmueble.direccion }}</li>
+                <li>Precio mensual de arriendo: {{ inmueble.precio_mensual_arriendo }}</li>
+                <li>Comuna: {{ inmueble.comuna.nombre }}</li>
+                <li>Región: {{ inmueble.comuna.region.nombre }}</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            {% if user.is_authenticated and user != inmueble.arrendador %}
+                <a href="{% url 'postular_arriendo' inmueble.id %}" class="btn btn-primary btn-sm">Postular para arriendo</a>
+            {% elif not user.is_authenticated %}
+                <p>Para postular a este inmueble, <a href="{% url 'login' %}">inicia sesión</a> o <a href="{% url 'register' %}">regístrate</a>.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
