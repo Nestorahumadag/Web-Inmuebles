@@ -3,29 +3,71 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="mt-4">Bienvenido a Inmuebles</h2>
-    <form method="get" class="form-inline my-4">
-        <div class="form-group mr-3">
+    <!-- Carrusel con subtítulos -->
+    <div id="carouselExampleAutoplaying" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/departamentos.png' %}" class="d-block w-100 img-fluid" alt="Departamentos">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Departamentos</h5>
+                    <p>Encuentra tu departamento ideal.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/casa.png' %}" class="d-block w-100 img-fluid" alt="Casa">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Casa</h5>
+                    <p>Explora nuestras opciones de casas.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/Parcelas.jpg' %}" class="d-block w-100 img-fluid" alt="Parcelas">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Parcelas</h5>
+                    <p>Descubre parcelas en venta.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Formulario en línea para filtros -->
+    <form method="get" class="d-flex flex-column flex-md-row align-items-center justify-content-center my-4">
+        <div class="form-group me-3 mb-2 mb-md-0">
             {{ form.region.label_tag }}
             {{ form.region }}
         </div>
-        <div class="form-group mr-3">
+        <div class="form-group me-3 mb-2 mb-md-0">
             {{ form.comuna.label_tag }}
             {{ form.comuna }}
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
+        <div class="form-group me-3 mb-2 mb-md-0">
+            {{ form.tipo_inmueble.label_tag }}
+            {{ form.tipo_inmueble }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm mt- align-self-center align-self-md-start">Filtrar</button>
+
     </form>
-    <h3 class="mt-4">Inmuebles Disponibles</h3>
+
+    <h3 class="mt-4 text-center">Inmuebles Disponibles</h3>
     <div class="row">
         {% for inmueble in inmuebles %}
-            <div class="col-md-4 col-sm-6">
-                <div class="card mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card">
                     {% if inmueble.imagen %}
-                        <img src="{{ inmueble.imagen.url }}" class="card-img-top" alt="{{ inmueble.nombre }}">
+                        <img src="{{ inmueble.imagen.url }}" class="card-img-top img-fluid" alt="{{ inmueble.nombre }}">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ inmueble.nombre }}</h5>
                         <p class="card-text">{{ inmueble.descripcion }}</p>
+                        <p class="card-text"><strong>Tipo: </strong>{{ inmueble.tipo_inmueble.nombre }}</p>
                         <p class="card-text"><strong>Precio: </strong>{{ inmueble.precio_mensual_arriendo }} CLP</p>
                         <a href="{% url 'detalle_inmueble' inmueble.id %}" class="btn btn-primary btn-sm">Ver Detalles</a>
                         {% if user.is_authenticated and user == inmueble.arrendador %}
@@ -38,6 +80,7 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- Incluir el archivo JavaScript -->
 <script src="{% static 'js/filtro_comunas.js' %}"></script>
 {% endblock %}
-

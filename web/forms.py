@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Inmueble, UserData, Comuna, Region,SolicitudArriendo
+from .models import Inmueble, UserData, Comuna, Region,SolicitudArriendo,TipoInmueble
 
 
 class UserLoginForm(forms.Form):
@@ -29,16 +29,52 @@ class UserProfileForm(forms.ModelForm):
 class InmuebleForm(forms.ModelForm):
     class Meta:
         model = Inmueble
-        fields = ['nombre', 'descripcion', 'm2_construidos', 'm2_totales', 'cantidad_estacionamientos', 'cantidad_habitaciones', 'cantidad_banos', 'direccion', 'precio_mensual_arriendo', 'comuna', 'imagen']
-        widgets = {
-            'imagen': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        fields = [
+            'nombre', 
+            'descripcion', 
+            'direccion', 
+            'precio_mensual_arriendo', 
+            'imagen', 
+            'tipo_inmueble', 
+            'comuna', 
+            'cantidad_habitaciones', 
+            'cantidad_banos', 
+            'cantidad_estacionamientos', 
+            'm2_construidos', 
+            'm2_totales'
+        ]
+        labels = {
+            'tipo_inmueble': 'Tipo de Inmueble',
+            'cantidad_habitaciones': 'Habitaciones',
+            'cantidad_banos': 'Baños',
+            'cantidad_estacionamientos': 'Estacionamientos',
+            'm2_construidos': 'Metros construidos',
+            'm2_totales': 'Metros totales',
         }
+        widgets = {
+            'descripcion': forms.Textarea(attrs={'rows': 4, 'class': 'form-control w-50'}),
+            'tipo_inmueble': forms.Select(attrs={'class': 'form-control w-50'}),
+            'direccion': forms.TextInput(attrs={'class': 'form-control w-50'}),
+            'precio_mensual_arriendo': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'cantidad_habitaciones': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'cantidad_banos': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'cantidad_estacionamientos': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'm2_construidos': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'm2_totales': forms.NumberInput(attrs={'class': 'form-control w-50'}),
+            'comuna': forms.Select(attrs={'class': 'form-control w-50'}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control w-50'}),
+            'imagen': forms.ClearableFileInput(attrs={'class': 'form-control w-50'}),
+        }
+
 class FiltroInmuebleForm(forms.Form):
     # Campo de selección de región con datos del modelo Region, no es obligatorio
-    region = forms.ModelChoiceField(queryset=Region.objects.all(), required=False, label="Región", widget=forms.Select(attrs={'class': 'form-control form-control-sm'}))
+    region = forms.ModelChoiceField(queryset=Region.objects.all(), required=False, label="Región", widget=forms.Select(attrs={'class': 'form-control form-control-sm', 'id': 'id_region'}),empty_label="")
     # Campo de selección de comuna con datos del modelo Comuna, no es obligatorio y comienza vacío
-    comuna = forms.ModelChoiceField(queryset=Comuna.objects.none(), required=False, label="Comuna", widget=forms.Select(attrs={'class': 'form-control form-control-sm'}))
-
+    comuna = forms.ModelChoiceField(queryset=Comuna.objects.none(), required=False, label="Comuna", widget=forms.Select(attrs={'class': 'form-control form-control-sm custom-select-width', 'id': 'id_comuna'}),empty_label="")
+    # Campo de selección de tipo de inmueble con datos del modelo TipoInmueble, no es obligatorio y comienza vacío
+    tipo_inmueble = forms.ModelChoiceField(queryset=TipoInmueble.objects.all(), required=False, label="Tipo de Inmueble",
+                                           widget=forms.Select(attrs={'class': 'form-control form-control-sm custom-select-width'}),empty_label="")
+    
     def __init__(self, *args, **kwargs):
         # Llamada al constructor de la clase padre
         super().__init__(*args, **kwargs)#Constructor del formulario. Se llama al crear una instancia del formulario.

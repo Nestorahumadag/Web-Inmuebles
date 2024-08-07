@@ -8,7 +8,7 @@ from .models import Inmueble,UserData,Comuna,SolicitudArriendo
 
 def index(request):
     # Obtener todos los inmuebles disponibles
-    inmuebles = Inmueble.objects.filter(disponible=True)
+    inmuebles = Inmueble.objects.all()
     if request.method == 'GET':
         form = FiltroInmuebleForm(request.GET)
         if form.is_valid():
@@ -16,6 +16,8 @@ def index(request):
                 inmuebles = inmuebles.filter(comuna__region=form.cleaned_data['region'])
             if form.cleaned_data['comuna']:
                 inmuebles = inmuebles.filter(comuna=form.cleaned_data['comuna'])
+            if form.cleaned_data['tipo_inmueble']:
+                inmuebles = inmuebles.filter(tipo_inmueble=form.cleaned_data['tipo_inmueble'])
     else:
         form = FiltroInmuebleForm()
     return render(request, 'pagina/index.html', {'form': form, 'inmuebles': inmuebles})
@@ -146,8 +148,9 @@ def eliminar_inmueble(request, id):
     # Renderizar la plantilla para confirmar la eliminación del inmueble
     return render(request, 'pagina/eliminar_inmueble.html', {'inmueble': inmueble})
 
+
 def comunas_por_region(request, region_id):
-    comunas = Comuna.objects.filter(region_id=region_id)
+    comunas = Comuna.objects.filter(region_id=region_id).order_by('nombre')
     comunas_dict = {comuna.id: comuna.nombre for comuna in comunas}
     return JsonResponse(comunas_dict)
 

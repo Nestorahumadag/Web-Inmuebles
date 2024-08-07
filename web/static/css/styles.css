@@ -1,11 +1,33 @@
-body {
-    background-color: #e7e7e7;
+
+html, body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    
+    
 }
+
+body {
+    background-image: url(../img/Real.png);
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen permanezca fija en la pantalla */
+}
+
 
 h2, h3 {
-    color: #343a40;
+    color: #050505;
 }
 
+.main-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Define la estructura: header, contenido, footer */
+    min-height: 100vh; /* Altura mínima para cubrir la ventana */
+}
+
+.content {
+    padding: 20px;
+}
 /*==========================Configuracion Navbar===========================*/
 
 .navbar {
@@ -39,6 +61,32 @@ h2, h3 {
 
 /*==========================Fin Configuracion Navbar===========================*/
 
+/*========================Configuracion Carrusel===============================*/
+
+.carousel {
+    max-width: 1500px; /* Cambia este valor para ajustar el ancho */
+    margin: 0 auto;   /* Centra el carrusel en el contenedor */
+}
+
+.carousel-inner img {
+    height: 500px;    /* Cambia este valor para ajustar la altura */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionar */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption h5, .carousel-caption p {
+    color: #fff; /* Texto en blanco para contraste */
+}
+
+/*========================Configuracion Carrusel===============================*/
+
+
+
 
 /*=========================Configuracion form-control region y comuna============================*/
 
@@ -57,11 +105,13 @@ h2, h3 {
 
 /*======================Configurar Footer =========================================*/
 
-footer {
-    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
-    background-color: #095480; /* Color de fondo opcional */
-    padding-top: 20px;
-    padding-bottom: 10px;
+.footer {
+    background-color: #095480; /* Color de fondo del footer */
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    grid-row-start: 3; /* Ubica el footer en la tercera fila del grid */
 }
 
 footer .icon {
@@ -121,3 +171,21 @@ footer .text-center p {
 }
 
 /*====================Fin Configurar tamaños responisvos=================================*/
+
+
+.form-group label {
+    padding-left: 0.5rem; /* Aumenta el espacio debajo de las etiquetas */
+    display: block;       /* Asegura que las etiquetas estén en una línea separada */
+}
+
+.form-control-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 10px;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+/* Estilo para aumentar el ancho del campo comuna */
+.custom-select-width {
+    width: 350px !important; /* Usa !important para sobrescribir otros estilos */
+}

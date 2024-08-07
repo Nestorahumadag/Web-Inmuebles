@@ -49,6 +49,7 @@ class Inmueble(models.Model):
     arrendador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inmuebles')# Relación con el usuario arrendador
     disponible = models.BooleanField(default=True)# Campo booleano para indicar si el inmueble está disponible
     imagen = models.ImageField(upload_to='inmuebles/', null=True, blank=True)# Campo de imagen para subir fotos del inmueble
+    tipo_inmueble = models.ForeignKey(TipoInmueble, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre

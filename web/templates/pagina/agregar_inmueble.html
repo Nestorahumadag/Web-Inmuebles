@@ -1,12 +1,126 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-    <h2>Agregar Nuevo Inmueble</h2>
-    <form method="post" enctype="multipart/form-data">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Publicar Inmueble</h2>
+    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        
+        <div class="mb-3">
+            <label for="{{ form.nombre.id_for_label }}" class="form-label">{{ form.nombre.label }}</label>
+            {{ form.nombre }}
+            <div class="invalid-feedback">
+                Por favor, ingresa el nombre del inmueble.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.descripcion.id_for_label }}" class="form-label">{{ form.descripcion.label }}</label>
+            {{ form.descripcion }}
+            <div class="invalid-feedback">
+                Por favor, ingresa una descripción para el inmueble.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.tipo_inmueble.id_for_label }}" class="form-label">{{ form.tipo_inmueble.label }}</label>
+            {{ form.tipo_inmueble }}
+            <div class="invalid-feedback">
+                Por favor, selecciona el tipo de inmueble.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.precio_mensual_arriendo.id_for_label }}" class="form-label">{{ form.precio_mensual_arriendo.label }}</label>
+            {{ form.precio_mensual_arriendo }}
+            <div class="invalid-feedback">
+                Por favor, ingresa el precio mensual de arriendo.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.cantidad_habitaciones.id_for_label }}" class="form-label">{{ form.cantidad_habitaciones.label }}</label>
+            {{ form.cantidad_habitaciones }}
+            <div class="invalid-feedback">
+                Por favor, ingresa la cantidad de habitaciones.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.cantidad_banos.id_for_label }}" class="form-label">{{ form.cantidad_banos.label }}</label>
+            {{ form.cantidad_banos }}
+            <div class="invalid-feedback">
+                Por favor, ingresa la cantidad de baños.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.cantidad_estacionamientos.id_for_label }}" class="form-label">{{ form.cantidad_estacionamientos.label }}</label>
+            {{ form.cantidad_estacionamientos }}
+            <div class="invalid-feedback">
+                Por favor, ingresa la cantidad de estacionamientos.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.m2_totales.id_for_label }}" class="form-label">{{ form.m2_totales.label }}</label>
+            {{ form.m2_totales }}
+            <div class="invalid-feedback">
+                Por favor, ingresa los metros cuadrados totales.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.m2_construidos.id_for_label }}" class="form-label">{{ form.m2_construidos.label }}</label>
+            {{ form.m2_construidos }}
+            <div class="invalid-feedback">
+                Por favor, ingresa los metros cuadrados construidos.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.direccion.id_for_label }}" class="form-label">{{ form.direccion.label }}</label>
+            {{ form.direccion }}
+            <div class="invalid-feedback">
+                Por favor, ingresa la dirección del inmueble.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.comuna.id_for_label }}" class="form-label">{{ form.comuna.label }}</label>
+            {{ form.comuna }}
+            <div class="invalid-feedback">
+                Por favor, selecciona la comuna.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="{{ form.imagen.id_for_label }}" class="form-label">{{ form.imagen.label }}</label>
+            {{ form.imagen }}
+            <div class="invalid-feedback">
+                Por favor, carga una imagen para el inmueble.
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary mt-4">Publicar</button>
     </form>
 </div>
+
+<!-- Script para habilitar validación de formularios -->
+<script>
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
 {% endblock %}
