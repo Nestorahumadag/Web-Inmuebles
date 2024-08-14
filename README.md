@@ -1,14 +1,28 @@
-<h1 align="center">Hola 👋, Mi nombre es Nestor Ahumada</h1>
-<h3 align="center">Soy desarrollador junior en full stack python</h3>
+# Título del proyecto
+RentaHogar
 
-- 🌱 Actualemnte estoy aprendiendo **Django, HTML, CSS, Javascript, postgreSQL**
+## Descripción 📑
+Proyecto creacion pagina web para rentar diferentes tipos de inmbuebles.
 
-- 📫 Email **nestor.a2013@hotmail.com**
+## ¿Qué he aprendido en este proyecto? 🙇🏻 
+Se aprendio a utilizar framework django, ademas de sincronizar base de datos postreSQL con el proyecto
 
-<h3 align="left">Contactame por:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/www.linkedin.com/in/néstor-eduardo-ahumada-garrido-11a99316a" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="www.linkedin.com/in/néstor-eduardo-ahumada-garrido-11a99316a" height="30" width="40" /></a>
-</p>
+## Vista previa del proyecto
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+
+## Tecnologías 🛠
+<!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://es.wikipedia.org/wiki/HTML5)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://es.wikipedia.org/wiki/CSS)
+[![JAVASCRIPT](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://es.wikipedia.org/wiki/JavaScript)
+[![PYTHON](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://es.wikipedia.org/wiki/Python)
+
+
+
+## Autor ✒️
+**Nestor Ahumada**
+
+* [LinkedIn](https://www.linkedin.com/in/tu-url-de-linkedin/)
+
+## Instalación 
+Este proyecto no necesita de instalación. Simplemente abre la carpeta o haz doble click en el .html
